@@ -1,4 +1,4 @@
-Print("Hello World!")
-Print("Every")
-print("To me")
-print("newHello")
+Print("Hello World!;")
+Print("Every;")
+print("To me;")
+print("newHello;")
