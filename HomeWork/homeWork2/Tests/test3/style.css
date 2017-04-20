@@ -1,0 +1,29 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.sprite-1429642107 {
+    width: 205px;
+    height: 205px;
+    background-position: -5px -5px;
+}
+
+.sprite-content_Walt-Disney- {
+    width: 635px;
+    height: 357px;
+    background-position: -5px -220px;
+}
+
+.sprite-lilo-i-stich {
+    width: 205px;
+    height: 205px;
+    background-position: -220px -5px;
+}
+
+.sprite-maxresdefault {
+    width: 205px;
+    height: 205px;
+    background-position: -435px -5px;
+}
