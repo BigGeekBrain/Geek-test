@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left:25%;
+	right:25%;
+}
+
+
+.top-bar__menu {
+	display: inline;
+}
+.intro__box {
+	width:400px;
+	height:440px;
+	background: #333333;
+}
+
+.content__about__image {
+	background-color:  #333333;
+	width: 290px;
+	height: 140px;
+}
+.content__services__icon-pic {
+	background-color:  #333333;
+	width: 64px;
+	height: 64px;
+}
