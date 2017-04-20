@@ -1,0 +1,83 @@
+body {
+	background-color: #f8f8f8;
+}
+
+.menu {
+	list-style-type: none;
+	color: #004105;
+	font-size: 30px;
+	text-align: center;
+
+}
+
+.product_miniT {
+	color: #707070;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 16px;
+}
+.product_Text {
+	color: #484343;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	text-align: left;
+}
+.product_sis {
+	list-style-image: url(Products/pic/yellow_air-conditioner_icon-icons.png); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+	color: black;
+	font-size: 18px
+	font-weight: 400;
+	background: #eaeaea;
+}
+h2 {
+	color: black;
+	font-size: 18px
+	font-weight: 400;
+	background: #eaeaea;
+}
+h3 {
+	color: black;
+	font-size: 18px
+	font-weight: 400;
+	background: #eaeaea;
+}
+h4 {
+	color: black;
+	font-size: 18px
+	font-weight: 400;
+	background: #eaeaea;
+}
+h5 {
+	color: black;
+	font-size: 18px
+	font-weight: 400;
+	background: #eaeaea;
+}
+h6 {
+	color: black;
+	font-size: 18px
+	font-weight: 400;
+	background: #eaeaea;
+}
