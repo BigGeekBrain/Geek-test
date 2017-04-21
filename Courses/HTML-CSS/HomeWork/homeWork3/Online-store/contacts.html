@@ -6,14 +6,15 @@
 	<title>Contacts</title>
 </head>
 <body>
-<ul class="menu">
-	<li><a href="index.html">Главная</a></li>
-	<li><a href="catalog.html">Каталог</a></li>
-	<li><a href="contacts.html">Контакты</a></li>
+<header class="header">
+<ul class="header menu">
+	<li class="header menu__item"><a href="index.html" class="header menu__item-link">Главная</a></li><span>/</span>
+	<li class="header menu__item"><a href="catalog.html" class="header menu__item-link">Каталог</a></li><span>/</span>
+	<li class="header menu__item"><a href="contacts.html" class="header menu__item-link">Контакты</a></li>
 </ul>
+	</header>
 
-	<hr>
-	<br><br>
+	<aside>
 	<form action="myserv.php" method="post">
 		<fieldset>
 			<legend>Напишите нам</legend>
@@ -43,8 +44,7 @@
 				</div>
 		</fieldset>
 	</form>
-
-	<br><br>
+	</aside>
 
 	<form action="myserv.php" method="post">
 
@@ -84,11 +84,9 @@
 		</p>
 	</form>
 
-	<br><br>
-
-	<hr>
-
-	Все права защищены&copy;
+	<footer class="footer">
+	<span class="footer copyright">Все права защищены &copy;</span>
+	</footer>
 
 </body>
 </html>

@@ -6,27 +6,28 @@
 	<title>Catalog</title>
 </head>
 <body>
-<ul class="menu">
-	<li><a href="index.html">Главная</a></li>
-	<li><a href="catalog.html">Каталог</a></li>
-	<li><a href="contacts.html">Контакты</a></li>
+<header class="header">
+<ul class="header menu">
+	<li class="header menu__item"><a href="index.html" class="header menu__item-link">Главная</a></li><span>/</span>
+	<li class="header menu__item"><a href="catalog.html" class="header menu__item-link">Каталог</a></li><span>/</span>
+	<li class="header menu__item"><a href="contacts.html" class="header menu__item-link">Контакты</a></li>
 </ul>
-
-
-	<hr>
+	</header>
 	
-	<h3>Каталог</h3>
+	<div class="content">
+	<h3 class="content products__logo">Каталог</h3>
+	<div class="content products">
+	<div class="content products__item"><a href="Products/Product1.html" target="_blank" class="content products__item-link"><img src="Products/pic/Robot.png" alt="Robot" class="content products__item-link pic"></a></div>
 
-	<a href="Products/Product1.html" target="_blank"><img src="Products/pic/Robot.png" alt="Robot"></a>
+	<div class="content products__item"><a href="Products/Product2.html" target="_blank" class="content products__item-link"><img src="Products/pic/Fridge.png" alt="Fridge" class="content products__item-link pic"></a></div>
 
-	<a href="Products/Product2.html" target="_blank"><img src="Products/pic/Fridge.png" alt="Fridge"></a>
-
-	<a href="Products/Product3.html" target="_blank"><img src="Products/pic/teaPot.png" alt="teaPot"></a>
+	<div class="content products__item"><a href="Products/Product3.html" target="_blank" class="content products__item-link"><img src="Products/pic/teaPot.png" alt="teaPot" class="content products__item-link pic"></a></div>
+	</div>
+	</div>
 	
-	<br><br>
-
-	<hr>
-	Все права защищены&copy;
+	<footer class="footer">
+	<span class="footer copyright">Все права защищены &copy;</span>
+	</footer>
 
 </body>
 </html>
