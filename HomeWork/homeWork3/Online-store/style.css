@@ -4,10 +4,20 @@ body {
 
 .menu {
 	list-style-type: none;
-	color: #004105;
 	font-size: 30px;
 	text-align: center;
-
+}
+.menu a:hover {
+	background-color: #BAC9FF;
+}
+.menu a:visited {
+	color: #0D7475;
+}
+.menu a:link {
+	color: #01048F;
+}
+.menu a:active {
+	color: black;
 }
 
 .product_miniT {
@@ -28,7 +38,12 @@ body {
 }
 
 .mainPic {
-	border: 2px solid #01048F;
+	border: 2px solid #010233;
+}
+
+input {
+	font-size: 12px;
+	color: #030266;
 }
 
 
