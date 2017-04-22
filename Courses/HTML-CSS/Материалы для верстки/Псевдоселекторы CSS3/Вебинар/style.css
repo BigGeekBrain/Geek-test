@@ -1,0 +1,129 @@
+.box {
+	width: 100px;
+	height: 100px;
+	background: orange;
+	position: relative;
+	margin: 40px;
+}
+.box:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  transform: rotate(60deg);
+}
+
+.box:before {
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: orange;
+	transform: rotate(30deg);
+}
+
+/*Звезда*/
+
+.list {
+	counter-reset: listCounter;
+	padding: 40px;
+	border-top: 1px solid #535353;
+	border-bottom:  1px solid #535353;
+	margin-bottom: 40px;
+}
+
+.list__item{
+	counter-increment: listCounter;
+}
+
+.list-inside {
+	 counter-reset: listCounterInside;
+}
+
+.list-inside__item{
+	list-style-type: none; 
+}
+
+.list-inside__item:before {
+	content: counter(listCounter) '.' counter(listCounterInside) '. ';
+	counter-increment: listCounterInside;
+}
+/*Нумерация списка*/
+.atribut-list__item:before {
+	content: attr(data-name) ' сказал: ';
+}
+
+.atribut-list {
+	padding: 0px 40px 40px 40px;
+	border-bottom: 1px solid #535353;
+	margin-bottom: 40px; 
+}
+/*Использование атрибутов*/
+.quotes {
+	quotes: '\093' '\094' '\0ab' '\0bb';
+}
+.quotes:before {
+	content: open-quote;
+}
+.quotes:after {
+ content: close-quote;
+}
+* + .quotes {
+	padding: 0px 40px 40px 40px;
+	border-bottom: 1px solid #535353;
+	margin-bottom: 40px;
+}
+/*Использование кавычек css*/
+.boxer {
+	width: 100px;
+	height: 100px;
+	background: orange;
+	margin: 10px;
+	float: left;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.hr {
+	padding-bottom: 40px;
+	border-bottom: 1px solid #535353;
+	margin-bottom: 40px;
+}
+/*Сброс обтекания*/
+.inputNumber{
+	color: #FFFFFF;
+}
+
+.inputNumber:in-range {  
+	background: #008606;
+}
+.inputNumber:out-of-range { 
+	background: #950202;
+}
+/*Формы*/
+input {
+	display: block;
+	margin-bottom: 20px;
+}
+.inputText:enabled {
+border: 1px solid green;
+}
+.inputText:disabled {
+border: 1px solid red;
+}
+.inputRead:read-write {
+	color: #008606;
+}
+.inputRead:read-only {
+	color: #950202;
+}
+.inputEmail:valid {
+	color: #008606;
+	font-variant: small-caps;
+}
+.inputEmail:invalid {
+	color: #950202;
+}
