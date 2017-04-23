@@ -22,7 +22,7 @@ input[type="text"] {
 }
 
 
-.header .menu:hover a{
+.header .menu__item:hover a{
 	color: #22AABA;
 }
 
@@ -154,6 +154,7 @@ aside {
 
 .mainPic {
 	border: 2px solid #001478;
+	margin: 40px; 
 }
 .mainPic:hover {
 	border: 2px solid #FFFFFF;
@@ -204,3 +205,31 @@ h1, h2, h3, h4, h5, h6 {
 #margin {
 	margin: 20px; 
 }
+/*table*/
+table {
+border-collapse: collapse;
+border-spacing:10px;
+}
+td {
+    border-bottom: 2px solid lightgrey;
+    padding: 10px;
+}
+th {
+	text-align: left;
+	font-variant: small-caps;
+	border-bottom: 2px solid lightgrey;
+	padding: 10px;
+}
+th:first-letter {
+	color: #E78301;
+}
+th .size:first-letter {
+	color: #E78301;
+}
+.low_text {
+	font-family: sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+	padding: 0px;
+}
+/*Дизайн страницы товара*/
