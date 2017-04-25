@@ -16,12 +16,12 @@ body {
 	background: #333333;
 }
 
-.content__about__image {
+.content__about-image {
 	background-color:  #333333;
 	width: 290px;
 	height: 140px;
 }
-.content__services__icon-pic {
+.content__service-icon {
 	background-color:  #333333;
 	width: 64px;
 	height: 64px;
