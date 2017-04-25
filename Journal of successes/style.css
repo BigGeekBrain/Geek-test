@@ -50,3 +50,19 @@ h1 {
 	color: #D55906;
 	text-align: center;
 }
+.legenda {
+	width: 535px;
+	border: 2px solid #618ad2;
+	border-radius: 5px;
+	margin: 10px 10px 10px 0px;
+	padding: 10px;
+	text-align: center;
+	box-sizing: border-box; 
+}
+
+.orange {
+	color: #D55906;
+}
+.blue {
+	color: #0066cc;
+}
