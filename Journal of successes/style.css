@@ -29,6 +29,14 @@
 	text-align: left;
 }
 
+.mainWork {
+	color: #D55906;
+}
+
+.mainWork:hover {
+	color: #7BB74A;
+}
+
 a {
 	text-decoration: none;
 	color: #0066cc;
