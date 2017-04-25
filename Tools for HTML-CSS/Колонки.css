@@ -1,0 +1,41 @@
+.box1 {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 1px 1px 0px;
+	width: 100%;
+	padding: 5px;
+	
+}
+
+.box2 {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 1px 1px 0px;
+	width: 100%;
+	padding: 5px;
+	
+
+}
+.box3 {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 1px 1px 0px;
+	width: 100%;
+	padding: 5px;
+	
+
+}
+.content {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px 1px 1px 0px;
+	width: 100%
+	padding: 5px;
+	
+}
+.main {
+	display: flex;
+}
+.box1 {
+	border-left: 1px solid black;
+}
