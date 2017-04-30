@@ -14,7 +14,7 @@
 ## GeekBrains
        
 *   #### Online-store
-       * **[Online-store](http://g98265di.beget.tech/ "Tehno-market") on Beget**
+       * **[Online-store](http://g98265di.beget.tech/Online-store/index.php "Tehno-market") on Beget**
        >Для наилучшего отображения магазина рекомендуется очистить **кэш** браузера
        * [Online-store](https://github.com/BigGeekBrain/Geek-test/tree/master/Online-store/ "Tehno-market") on GitHub
 *   #### Home Works
