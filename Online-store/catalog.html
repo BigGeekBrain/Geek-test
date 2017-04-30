@@ -6,27 +6,30 @@
 	<title>Catalog</title>
 </head>
 <body>
-<header class="header">
-<ul class="header menu">
-	<li class="header menu__item"><a href="index.html" class="header menu__item-link">Главная</a></li><span>/</span>
-	<li class="header menu__item"><a href="catalog.html" class="header menu__item-link">Каталог</a></li><span>/</span>
-	<li class="header menu__item"><a href="contacts.html" class="header menu__item-link">Контакты</a></li>
-</ul>
- <h3 class="header products__logo">Каталог</h3>
+	
+	<?php require_once "Includes/header.php"; ?>
+
+	<header class="header">
+		<ul class="header__menu">
+			<li class="header__menu-item"><a href="index.php" class="header__menu-link">Главная</a></li><span class="	header__slasher">/</span>
+			<li class="header__menu-item"><a href="catalog.php" class="header__menu-link">Каталог</a></li><span class="header__slasher">/</span>
+			<li class="header__menu-item"><a href="contacts.php" class="header__menu-link">Контакты</a></li>
+		</ul>
+		<h1 class="header__logo">Tehno-market</h1>
 	</header>
 	
-	<div class="content">
-	<div class="content products">
-	<div class="content products__item"><a href="Products/Product1.html" target="_blank" class="content products__item-link"><img src="Products/pic/Robot.png" alt="Robot" class="content products__item-link pic"></a></div>
-
-	<div class="content products__item"><a href="Products/Product2.html" target="_blank" class="content products__item-link"><img src="Products/pic/Fridge.png" alt="Fridge" class="content products__item-link pic"></a></div>
-
-	<div class="content products__item"><a href="Products/Product3.html" target="_blank" class="content products__item-link"><img src="Products/pic/teaPot.png" alt="teaPot" class="content products__item-link pic"></a></div>
-	</div>
+	<div class="catalog">
+		<ul class="catalog__product">
+			<li class="catalog__product-item"><a class="catalog__product-link" href="Products/Product1.html" target="_blank" title="Robot"><img class="catalog__product-pic" src="Products/pic/Robot.png" alt="Robot" width="162" height="119"></a></li>
+			<li class="catalog__product-item"><a class="catalog__product-link" href="Products/Product2.html" target="_blank" title="Fridge"><img class="catalog__product-pic" src="Products/pic/Fridge.png" alt="Fridge" width="61" height="119"></a></li>
+			<li class="catalog__product-item"><a class="catalog__product-link" href="Products/Product3.html" target="_blank" title="teaPot"><img class="catalog__product-pic" src="Products/pic/teaPot.png" alt="teaPot" width="88" height="119"></a></li>
+		</ul>
 	</div>
 	
+	<?php require_once "Includes/footer.php"; ?>
+
 	<footer class="footer">
-	<span class="footer copyright">Все права защищены &copy;</span>
+		<span class="footer__copyright">Все права защищены &copy;</span>
 	</footer>
 
 </body>

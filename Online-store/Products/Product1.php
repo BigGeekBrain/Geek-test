@@ -7,7 +7,7 @@
 	<title>Robot</title>
 </head>
 <body>
-	<a class="button_back" href="../catalog.php">Назад</a>
+	<?php require_once "../Includes/button_back.php"; ?>
 	<!-- Кнопка назад -->
 	<div class="good">
 		<div class="good__promo">
@@ -152,9 +152,11 @@ Hobot завоевал золотую
 			</ul>
 		</div>
 	</div>
-	<footer class="footer">
-		<span class="footer copyright">Все права защищены &copy;</span>
-	</footer>
+
+
+
+
+	<?php require_once "../Includes/footer.php"; ?>
 	<!-- footer -->
 </body>
 </html>
