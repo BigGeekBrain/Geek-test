@@ -66,3 +66,7 @@ h1 {
 .blue {
 	color: #0066cc;
 }
+.hardcore__style {
+	font-size: 13px;
+	list-style-type: circle; 
+}
