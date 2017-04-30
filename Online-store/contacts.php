@@ -3,21 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="Products/pic/436974-32.png">
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 	<title>Contacts</title>
 </head>
 <body>
 	
 	<?php require_once "Includes/header.php"; ?>
-
-	<header class="header">
-		<ul class="header__menu">
-			<li class="header__menu-item"><a href="index.php" class="header__menu-link"><i class="fa fa-bars" aria-hidden="true"></i>&ensp;Главная</a></li><span class="header__slasher">/</span>
-			<li class="header__menu-item"><a href="catalog.php" class="header__menu-link"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&ensp;Каталог</a></li><span class="header__slasher">/</span>
-			<li class="header__menu-item"><a href="contacts.php" class="header__menu-link"><i class="fa fa-address-card-o" aria-hidden="true"></i>&ensp;Контакты</a></li>
-		</ul>
-		<h1 class="header__logo">Tehno-market</h1>
-	</header>
 
 
 	<form class="feedback" action="" method="post">
@@ -60,10 +52,6 @@
 </div>
 
 	<?php require_once "Includes/footer.php"; ?>
-
-	<footer class="footer">
-		<span class="footer__copyright">Все права защищены &copy;</span>
-	</footer>
 
 </body>
 </html>
