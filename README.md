@@ -2,7 +2,7 @@
 *   #### Journal of successes
        * [Journal of successes](http://g98265di.beget.tech/Journal%20of%20successes/Journal%20of%20successes.html "Journal of successes")
 *   #### Files to the current scan
-       * **[Online-store](http://g98265di.beget.tech/Online-store/index.php "Tehno-market")
+       * **[Online-store](http://g98265di.beget.tech/Online-store/index.php "Tehno-market")**
       
 ## GeekBrains
        
