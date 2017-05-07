@@ -1,7 +1,17 @@
-.content {
+/*.conteiner {
+	display: flex;
+}*/
+
+.contentCol {
 	width: 535px;
 	border: 2px solid #618ad2;
 	border-radius: 5px;
+	margin-left: 20px;
+	box-sizing: border-box;
+	display: inline-block; /*delite if flex*/
+	vertical-align: top; /*delite if flex*/
+	/*overflow-y: scroll;
+	height: 800px;*/
 }
 
 .content__main {
@@ -57,7 +67,8 @@ h1 {
 	margin: 10px 10px 10px 0px;
 	padding: 10px;
 	text-align: center;
-	box-sizing: border-box; 
+	box-sizing: border-box;
+	margin: 20px auto;
 }
 
 .orange {
