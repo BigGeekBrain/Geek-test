@@ -16,17 +16,17 @@
 		var result;
 		var res = document.getElementById( "res" );
 
-if ( a !== NaN || a >= 0 || b!==NaN || b >= 0 ) {
+if ( a !== NaN && a >= 0 && b !==NaN && b >= 0 ) {
 	if ( a > b ) {
 		result = a - b;
 	} else {
 		result = b - a;
 	}
-} else if ( a !== NaN || a < 0 || b!==NaN || b < 0 ) {
+} else if ( a !== NaN && a < 0 && b!==NaN && b < 0 ) {
 
 		result = a * b;
-} else if ( ( a !== NaN || a < 0 || b!==NaN || b >= 0 ) || ( a !== NaN || a >= 0 || b!==NaN || b < 0 ) ) {
-	result = a + b;
+} else if ( ( a !== NaN && a < 0 && b !== NaN && b >= 0 ) || ( a !== NaN && a >= 0 && b !== NaN && b < 0 ) ) {
+		result = a + b;
 }
 res.innerHTML = "Итог: " + result;
 
@@ -36,17 +36,17 @@ function inputNumbers() {
 	var result;
 	var res = document.getElementById( "res" )
 
-if ( a !== NaN || a >= 0 || b!==NaN || b >= 0 ) {
+if ( a !== NaN && a >= 0 && b !== NaN && b >= 0 ) {
 	if ( a > b ) {
 		result = a - b;
 	} else {
 		result = b - a;
 	}
-} else if ( a !== NaN || a < 0 || b!==NaN || b < 0 ) {
+} else if ( a !== NaN && a < 0 && b !==NaN && b < 0 ) {
 
 		result = a * b;
-} else if ( ( a !== NaN || a < 0 || b!==NaN || b >= 0 ) || ( a !== NaN || a >= 0 || b!==NaN || b < 0 ) ) {
-	result = a + b;
+} else if ( ( a !== NaN && a < 0 && b !== NaN && b >= 0 ) || ( a !== NaN && a >= 0 && b !== NaN && b < 0 ) ) {
+		result = a + b;
 }
 console.log(typeof a);
 res.innerHTML = "Итог: " + result;
