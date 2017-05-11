@@ -5,12 +5,51 @@
 	<title>task_#3</title>
 </head>
 <body>
+<span id="res">Итог:</span>
+<br>
+<input type="text" name="firstNumber" id="firstNumber">
+<input type="text" name="secondNumber" id="secondNumber">
+<button onclick="inputNumbers()">Ввести произвольные числа</button>
 	<script>
 		var a = 10;
 		var b = 22;
+		var result;
+		var res = document.getElementById( "res" );
 
-if ( a >= 0 || b >= 0 ) {
+if ( a !== NaN || a >= 0 || b!==NaN || b >= 0 ) {
+	if ( a > b ) {
+		result = a - b;
+	} else {
+		result = b - a;
+	}
+} else if ( a !== NaN || a < 0 || b!==NaN || b < 0 ) {
 
+		result = a * b;
+} else if ( ( a !== NaN || a < 0 || b!==NaN || b >= 0 ) || ( a !== NaN || a >= 0 || b!==NaN || b < 0 ) ) {
+	result = a + b;
+}
+res.innerHTML = "Итог: " + result;
+
+function inputNumbers() {
+	var a = +document.getElementById( "firstNumber" ).value;
+	var b = +document.getElementById( "secondNumber" ).value;
+	var result;
+	var res = document.getElementById( "res" )
+
+if ( a !== NaN || a >= 0 || b!==NaN || b >= 0 ) {
+	if ( a > b ) {
+		result = a - b;
+	} else {
+		result = b - a;
+	}
+} else if ( a !== NaN || a < 0 || b!==NaN || b < 0 ) {
+
+		result = a * b;
+} else if ( ( a !== NaN || a < 0 || b!==NaN || b >= 0 ) || ( a !== NaN || a >= 0 || b!==NaN || b < 0 ) ) {
+	result = a + b;
+}
+console.log(typeof a);
+res.innerHTML = "Итог: " + result;
 }
 	</script>
 </body>
