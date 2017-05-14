@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Функция сложения чисел</title>
+</head>
+<body>
+	<script>
+	function summ ( a ) {
+		return function ( b ) {
+			return a + b;
+		}
+	}
+		var result = summ(6)(8);
+		console.log( result );
+	</script>
+</body>
+</html>

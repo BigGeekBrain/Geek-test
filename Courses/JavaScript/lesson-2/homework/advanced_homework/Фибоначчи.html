@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Фибоначчи</title>
+	<style>
+		input {
+			width: 70px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		div {
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			display: inline-block;
+			min-height: 15px;
+			min-width: 100px;
+			margin: 10px;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+<input type="text" name="n" id="nn" placeholder="n">
+<input type="text" name="prev1" id="prev1n" placeholder="prev1">
+<input type="text" name="prev2" id="prev2n" placeholder="prev2">
+<button onclick="ass()">Узнать результат</button>
+<br>
+<div id="fibonacci_result"></div>
+	<script>
+	function fibonacci( n, prev1, prev2 ){
+	var n = +document.getElementById('nn').value;
+	var prev1 = +document.getElementById('prev1n').value;
+	var prev2 = +document.getElementById('prev2n').value;
+	var current = prev1 + prev2;
+	var fibonacci_string = current + " ";
+	if(n > 1)
+		fibonacci_string += fibonacci(n - 1, current, prev1);
+        return fibonacci_string;
+}
+
+function ass () {
+	alert(fibonacci());
+}
+
+	</script>
+</body>
+</html>

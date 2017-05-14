@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>average</title>
+	<style>
+		input {
+			width: 70px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		div {
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			display: inline-block;
+			min-height: 15px;
+			min-width: 100px;
+			margin: 10px;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="firstNumber" id="firstNumber" placeholder="a">
+	<input type="text" name="secondNumber" id="secondNumber" placeholder="b">
+	<input type="text" name="thirdNumber" id="thirdNumber" placeholder="c">
+	<button type="button" onclick="average()">Узнать результат</button>
+	<br>
+	<div id="showAverage"></div>
+	<script>
+		function average() {
+			var a = +document.getElementById('firstNumber').value;
+			var b = +document.getElementById('secondNumber').value;
+			var c = +document.getElementById('thirdNumber').value;
+			var aver;
+
+			if ( ( a > b && a < c ) || ( a > c && a < b ) ) {
+				aver = a;
+				showAverage.innerHTML = "среднее число из -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
+			} else if ( ( b > a && b < c ) || ( b > c && b < a ) ) {
+				aver = b;
+				showAverage.innerHTML = "среднее число из -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
+			} else {
+				aver = c;
+				showAverage.innerHTML = "среднее число из -------- " + a + " | " + b + " | " + c + " -------- это " + aver;
+			}
+		}
+	</script>
+</body>
+</html>
