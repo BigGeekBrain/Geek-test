@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Convertor</title>
+	<style>
+		input {
+			width: 170px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+			margin-left: 15px; 
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 2px 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#result {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 220px;
+			text-align: center;
+			min-height: 20px;
+		}
+	</style>
+</head>
+<body>
+<h1>Задание:</h1>
+<p>1.	Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.</p>
+<input name="number" id="number" placeholder="Введите число от 0 до 999">
+<button type="button" id="createObject">Создать объект</button>
+<div id="result"></div>
+	<script>
+		var createObj = document.getElementById( 'createObject' );
+
+		var numberSplitter = function ( inputNumber ) {
+			var inputNumber = +document.getElementById( 'number' ).value;
+			if ( inputNumber >= 0 && inputNumber <= 999 ) {
+				var numberObject = {};
+
+				var units = inputNumber % 10;
+				var decades = ((( inputNumber % 100 ) - units ) / 10 );
+				var hundreds = ( inputNumber - ( inputNumber % 100 )) / 100;
+
+				numberObject.handred = hundreds;
+				numberObject.decade = decades;
+				numberObject.unit = units;
+
+				console.log( numberObject );
+				result.innerHTML = "сотни: " + numberObject.handred + " десятки: " + numberObject.decade + " единицы: " + numberObject.unit;
+
+			} else if ( inputNumber > 999 ) {
+				console.log( "Вы ввели число больше 999" );
+				numberObject = {};
+				console.log( numberObject );
+				result.innerHTML = "сотни: " + numberObject.handred + " десятки: " + numberObject.decade + " единицы: " + numberObject.unit;
+			}
+		}
+
+
+		createObj.addEventListener( 'click', numberSplitter );
+	</script>
+</body>
+</html>
