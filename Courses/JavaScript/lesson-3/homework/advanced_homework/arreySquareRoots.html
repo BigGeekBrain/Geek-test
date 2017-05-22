@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SquareRoots</title>
+	<style>
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+<h1>Задание:</h1>
+<p>5. Дан массив из n случайных чисел от 0 до 1000. Сформировать массив, в котором будут находиться квадратные корни каждого элемента массива. Написать как минимум четыре (!) разные реализации программы. Проверить производительность решений на jsperf.com и прислать ссылку на ваши тесты.</p>
+
+
+<a href="https://jsperf.com/squareroots" title="Test">Тесть способов извлечения квадратных корней на jsperf.com</a>
+
+<!-- test on https://jsperf.com/squareroots -->
+
+	<script>
+		function getRandom ( min, max ) {
+			return Math.floor( Math.random() * ( max - min + 1 )) + min;
+		}
+
+		var arrey = [];
+
+		for ( var i = 0; arrey.length !== 10 ;i++ ) {
+			var num = Math.sqrt(getRandom( 0, 1000 ));
+			if ( Number.isInteger( num ) === true && num !== 0 ) {
+				arrey.push( num * num );
+			}
+		}
+
+
+		console.log( arrey );
+
+// ------------------------------------------------------------------------------------------
+//									for metod #3
+	var squareArrey = [ 1 ];
+    var start = 1;
+    for ( var i = 1; i < 500 ; i++ ) {
+    	squareArrey.push( start += 2 );
+    }
+
+// ------------------------------------------------------------------------------------------
+
+		var rootArrey_1 = [];
+		rootArrey_1 = arrey.map(function( number ) {
+			for (var i = 0; i <= number ; i++) {
+				var value = i * i;
+				if ( value === number ) {
+					return i;
+				}
+			}
+		});
+
+		console.log( rootArrey_1 );
+
+//--------------------------------------------------------------------------------------------
+
+
+		var rootArrey_2 = [];
+		rootArrey_2 = arrey.map(function( number ) {
+			return Math.sqrt( number );
+		});
+
+		console.log( rootArrey_2 );
+
+
+// ------------------------------------------------------------------------------------------
+
+
+		var rootArrey_3 = [];
+		rootArrey_3 = arrey.map(function( number ) {
+			return sqrtt( number );
+		});
+
+		console.log( rootArrey_3 );
+
+
+// ------------------------------------------------------------------------------------
+
+		var rootArrey_4 = [];
+		rootArrey_4 = arrey.map(function( number ) {
+
+			var circl = 0;
+
+    		for ( var j = 0;circl !== number; j++ ) {
+    			circl += squareArrey[j]
+    		}
+
+    		return j;
+		});
+
+		console.log( rootArrey_4 );
+
+// ------------------------------------------------------------------------------------
+				
+//								for metod #4
+
+		function sqrtt ( mynum ) {
+
+		var numpluser = 0;
+		var generator = [];
+		var power = [];
+		var i = 0;
+		while ( numpluser < mynum ) {
+			numpluser = i * i;
+			generator.push( i * i );
+			power.push( i );
+			i += 10;
+		}
+
+		var first = generator.pop();
+		var second = generator.pop();
+		var firstPow = power.pop();
+		var secondPow = power.pop();
+		
+
+	var numword = mynum + "";
+    var splitNumber;
+    
+    function splitter ( number ) {
+      var split = number.split("");
+      splitNumber = split.map(function( element ){
+        return +element;
+      });
+    }
+    splitter( numword );
+
+    if ( splitNumber[splitNumber.length - 1] === 4 ) {
+    	var res1 = secondPow + 2;
+    	var test1 = res1 * res1;
+    	var res2 = secondPow + 8;
+    	var test2 = res2 * res2;
+    } else if ( splitNumber[splitNumber.length - 1] === 1 ) {
+    	res1 = secondPow + 1;
+    	test1 = ( secondPow + 1 ) * ( secondPow + 1 );
+    	res2 = secondPow + 9;
+    	test2 = ( secondPow + 9 ) * ( secondPow + 9 );
+    } else if ( splitNumber[splitNumber.length - 1] === 9 ) {
+    	res1 = secondPow + 3;
+    	test1 = ( secondPow + 3 ) * ( secondPow + 3 );
+    	res2 = secondPow + 7;
+    	test2 = ( secondPow + 7 ) * ( secondPow + 7 );
+    } else if ( splitNumber[splitNumber.length - 1] === 6 ) {
+    	res1 = secondPow + 4;
+    	test1 = ( secondPow + 4 ) * ( secondPow + 4 );
+    	res2 = secondPow + 6;
+    	test2 = ( secondPow + 6 ) * ( secondPow + 6 );
+    } else if ( splitNumber[splitNumber.length - 1] === 5 ) {
+    	res1 = secondPow + 5;
+    	test1 = ( secondPow + 5 ) * ( secondPow + 5 );
+    	res2 = 1;
+    	test2 = 1;
+    } else if ( splitNumber[splitNumber.length - 1] === 0 ) {
+    	res1 = secondPow;
+    	test1 = secondPow * secondPow;
+    	res2 = firstPow;
+    	test2 = firstPow * firstPow;
+    }  
+
+    	if ( mynum === test1 ) {
+    		return res1;
+    	} else if ( mynum === test2 ) {
+    		return res2;
+    	}
+    }
+	</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learnArrey</title>
+</head>
+<body>
+	<script>
+		var arrey = [];
+		var arrey2 = [ 45, 56, 27 ];
+
+
+
+		arrey.push( 45, 3, 56, 78, 67, 89 ); //добавляет элементы в конец массива
+		console.log( arrey );
+
+
+		console.log( "---------------------------------" );
+
+
+		arrey.unshift( 55, 65 ); // добавляет элементы в начало массива
+		console.log( arrey );
+
+
+		console.log( "---------------------------------" );
+
+
+		var takeStart = arrey.shift(); // удалеяет первый элемент массива
+		console.log( arrey, takeStart );
+
+		console.log( "---------------------------------" );
+
+
+		var takeEnd = arrey.pop(); // удаляет последний элемент массива
+		console.log( arrey, takeEnd );
+
+		console.log( "---------------------------------" );
+
+
+		var splice = arrey.splice(2, 2, "addelement1", "addelement2"); // удаляет элементы по индексам - первые два значения, следующие значения - добавляет на их место указанные элементы
+		console.log( arrey, splice );
+
+		console.log( "---------------------------------" );
+
+
+		var splice = arrey.splice(2, 2, 3, 56); // -//-
+		console.log( arrey, splice );
+
+		console.log( "---------------------------------" );
+
+
+		var splice = arrey.splice(2, 0, 5, 2); // добавляет элнменты  начина с указанного индекса (первое значение)
+		console.log( arrey, splice );
+
+		console.log( "---------------------------------" );
+
+
+		var slice = arrey.slice( 1, -2 ); // создает массив из элементов. значения - индексы элементов с - по.
+		console.log( arrey, slice );
+
+		console.log( "---------------------------------" );
+
+
+		var onePlusOneArrey = arrey.concat( arrey2 ); // склеивает массивы
+		console.log( onePlusOneArrey );
+
+		console.log( "---------------------------------" );
+
+
+		var filter = arrey.filter(function( element ){
+			return element > 50;
+		}); // создает массив по отобранным элементам. метод использует ананимную функцию, которой в качестве аргумента передается значение элементов массива. функция должна возвращать true или false если значение истина то элемет прошедший проверку добавляется в массив.
+		console.log( filter );
+
+		console.log( "---------------------------------" );
+
+
+		var modArrey = arrey.map(function( element ) {
+			return element + 1000;
+		}); // создает массив из измененных содержащий модифицированные элементы
+		console.log( arrey, modArrey );
+
+
+		console.log( "---------------------------------" );
+
+
+		arrey.forEach(function( element ){
+			console.log( element );
+		}); // перебирает массив
+
+
+		console.log( "---------------------------------" );
+
+
+		var word = "Привет";
+		var splitword = word.split(""); // создание массива который разбивает строку на буквы
+		console.log( splitword );
+
+
+		console.log( "---------------------------------" );
+
+
+		var words = "Привет||как||дела||?";
+		var splitwords = words.split("||"); // создание массива который разбивает строку по символу ||
+		console.log( splitwords );
+
+
+		console.log( "---------------------------------" );
+
+		var wordsArrey = ['Маша', 'Петя', 'Марина', 'Василий'];
+    	var str = wordsArrey.join(' ');
+   		console.log( str );
+
+
+		
+		console.log( "---------------------------------" );
+
+
+		var number = "3456";
+		var splitNumber;
+
+		function splitter ( number ) {
+			var split = number.split("");
+			splitNumber = split.map(function( element ){
+				return +element;
+			});
+		}  // создание функции, которая принимает число в виде строки и помещает его в массив элементы которого это разряды введенного числа
+
+
+		splitter( number );
+		console.log( number, splitNumber );
+
+		/* -------------- пояснение к работе функции ---------------
+
+		 var number = "2345";
+		 var splitNumber = number.split("");
+		 console.log( splitNumber );
+
+		 var realSplitNumber = splitNumber.map(function( number ){
+		 	return +number;
+		 });
+		 console.log( realSplitNumber );
+		 */
+
+
+		console.log( "---------------------------------" );
+
+
+		console.log(arrey);
+		arrey.reverse(); //переворот массива
+		console.log(arrey);
+		// для удобства верну массив обратно
+		arrey.reverse();
+
+
+		console.log( "---------------------------------" );
+
+
+		var testWord = "Змееножка";
+		var reverse = testWord.split("").reverse().join("");
+		console.log( testWord, reverse );
+
+
+		console.log( "---------------------------------" );
+
+
+		var index = arrey.indexOf( 3 ); // метод возвращает индекс элемента, который содержит аргумент indexOf
+		console.log( arrey );
+		console.log( index );
+
+		var index2 = arrey.indexOf( 105 ) // если в массиве нет аргумента переданного indexOf метод вернет -1
+		console.log( index2 );
+
+		function testTheArrey ( arr ) {
+			if ( arr.indexOf( 144 ) === -1 ) {
+				return true;
+			} else {
+				return false;
+			}
+		} // функция вернет истину, если в массиве нет числового элемента 144
+		console.log( arrey, testTheArrey( arrey ) );
+
+
+		console.log( "---------------------------------" );
+
+
+		var arrey3 = [ "апельсин", "груша", "барбарис", "вишня" ];
+		console.log( arrey3 );
+		arrey3 = arrey3.sort(); // сортировка элементов массива по алфавиту
+		console.log( arrey3 );
+
+		console.log( arrey );
+		arrey = arrey.sort(function( a, b ) {
+			return a - b;
+		}); // сортировка элементов массива по порядку
+		console.log( arrey );
+	</script>
+</body>
+</html>

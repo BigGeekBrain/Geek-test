@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Power_3</title>
+	<style>
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#result {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 250px;
+			text-align: center;
+			min-height: 20px;
+			display: none;
+		}
+		input {
+			margin: 10px auto;
+			padding: 10px;
+			width: 200px;
+			border: 2px solid #B6B6B6;
+			border-radius: 5px;
+			background: #E7E7E7;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		input:focus {
+			outline: none;
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 5px;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			padding: 10px;
+			margin: 20px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+	</style>
+</head>
+<body>
+	<h1>Задание: </h1>
+	<p>11. Без циклов и рекурсий написать программу проверки, является ли введёное число степенью 3. Написать блок-схему. Например: 91, 243 являются степенью 3-х.</p>
+
+	<input type="text" name="number" id="number" placeholder="Введите число">
+	<button type="button" id="check">Проверить</button>
+	<div id="result"></div>
+
+
+	<script>
+
+	var number = document.getElementById( 'number' );
+
+	var checkNumber = function () {
+		var inputNumber = +number.value;
+
+	if ( isNaN( inputNumber ) === true ) {
+
+		result.style.display = 'block';
+		result.innerHTML = "Введите число!";
+
+	} else {
+		if ( inputNumber % 3 === 0 && inputNumber % 2 !== 0) {
+			result.style.display = 'block';
+			result.innerHTML = "Число является степенью 3-х!";
+		} else {
+			result.style.display = 'block';
+			result.innerHTML = "Число не является степенью 3-х!";
+		}
+	}
+}
+	
+
+	var checkbtn = document.getElementById( 'check' );
+	checkbtn.addEventListener( 'click', function(){
+		checkNumber();
+	});
+
+	</script>
+</body>
+</html>

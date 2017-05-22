@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Word Counter</title>
+	<style>
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#resultCount {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 250px;
+			text-align: left;
+			min-height: 20px;
+			display: block;
+		}
+		textarea {
+			margin: 10px auto;
+			padding: 10px;
+			width: 300px;
+			border: 2px solid #B6B6B6;
+			border-radius: 5px;
+			background: #E7E7E7;
+			text-align: center;
+		}
+		textarea:focus {
+			outline: none;
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 5px;
+			vertical-align: center;
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+<h1>Задача:</h1>
+<p>9. Написать функцию подсчёта слов в строке. Строка вводится в textarea. Количество слов должно рассчитываться незамедлительно после введения какого-то символа в текстовое поле. Написать блок-схему. (Ремарка: Для обращения к символу строки можно пользоваться выражением str[ i ], где i - индекс символа. Строки чем-то похожи на массивы, у них также есть свойство length).</p>
+
+<textarea id="text">
+В текстовое поле введено шесть слов
+</textarea>
+
+<div id="resultCount"></div>
+
+<script>
+
+	function isWord ( event ) {
+		if ( event.keyCode !== 32 ) {
+		var string = textareaPlace.value;
+		string = string.split(" ").filter(function( word ){
+			return word.length > 0;
+		});
+		console.log( string, string.length );
+		resultCount.innerHTML = "Количество введенных слов: " + ( string.length );
+	} else {
+		return;
+	}
+}
+	
+	var textareaPlace = document.getElementById( 'text' );
+
+	window.addEventListener( 'DOMContentLoaded', function( event ){
+		isWord( event );
+	});
+
+	textareaPlace.addEventListener( 'keyup', function( event ){
+		isWord( event );
+	});
+
+</script>
+	
+</body>
+</html>

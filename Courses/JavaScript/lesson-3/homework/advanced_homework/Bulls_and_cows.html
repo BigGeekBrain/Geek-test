@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bulls_and_cows</title>
+	<style>
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px;
+		}
+		#result {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			width: 135px;
+			text-align: left;
+			min-height: 20px;
+			display: none;
+		}
+		input {
+			margin: 10px auto;
+			padding: 10px;
+			width: 300px;
+			border: 2px solid #B6B6B6;
+			border-radius: 5px;
+			background: #E7E7E7;
+			text-align: center;
+		}
+		input:focus {
+			outline: none;
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 5px;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 5px;
+			outline: none;
+			cursor: pointer;
+			padding: 10px;
+			margin: 10px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+	</style>
+</head>
+<body>
+<h1>Быки и коровы</h1>
+<p>Ваш соперник (компьютер, например), загадывает 4-значное число, <b>состоящее из неповторяющихся цифр</b>. Ваша задача - угадать его. Кстати, число ходов можно и ограничить. В качестве подсказок выступают «коровы» (цифра угадана, но её позиция - нет) и «быки» (когда совпадает и цифра и её позиция). То есть если загадано число «1234», а вы называете «6531», то результатом будет 1 корова (цифра «1») и 1 бык (цифра «3») .
+
+Попытки отгадать число будут идти через диалоговое окно – prompt. Браузер будет сообщать в ответ больше или меньше загаданного наше предположение.
+
+Алгоритм будет таким:
+
+1. Браузер генерирует число и приглашает пользователя к игре.
+2. Выводится окно запроса предположения.
+3. Браузер проверяет число и возвращает результат.
+4. Повторяем до тех пор, пока число не будет угадано.
+5. Как только число угадано, браузер сбрасывает число попыток и генерирует новое число. 
+</p>
+
+<h1>Угадайте число!</h1>
+<h1>У вас 10 попыток!</h1>
+<h1>Зверь - это ваше загаданное число</h1>
+<input type="text" name="answer" id="answer" placeholder="Введите число от 1000 до 9999">
+<button type="button" id="sendAnswer">Пропробовать угадать</button>
+<div id="result"></div>
+	<script>
+		
+		var sendBtn = document.getElementById( 'sendAnswer' );
+		sendBtn.addEventListener( 'click', function(){ startGame()} );
+
+		var bullcow = getRandom( 1000, 9999 );
+		var userNumber = document.getElementById( 'answer' );
+		var bullCowArrey = [];
+		var userArrey =[];
+		var i = 0;
+
+
+		function getRandom ( min, max ) {
+			return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+		}
+		
+		function getBullCowArrey ( number ) {
+
+			
+			var animal_1 = number % 10;
+			var animal_2 = ((( number % 100 ) - animal_1 ) / 10 );
+			var animal_3 = ((( number % 1000 ) - ( number % 100 )) / 100 );
+			var animal_4 = ( number - ( number % 1000 )) / 1000;
+
+			bullCowArrey[ 3 ] = animal_1;
+			bullCowArrey[ 2 ] = animal_2;
+			bullCowArrey[ 1 ] = animal_3;
+			bullCowArrey[ 0 ] = animal_4;
+		}
+
+		function getUserArrey ( number ) {
+
+			
+			var animal_1 = number % 10;
+			var animal_2 = ((( number % 100 ) - animal_1 ) / 10 );
+			var animal_3 = ((( number % 1000 ) - ( number % 100 )) / 100 );
+			var animal_4 = ( number - ( number % 1000 )) / 1000;
+
+			userArrey[ 3 ] = animal_1;
+			userArrey[ 2 ] = animal_2;
+			userArrey[ 1 ] = animal_3;
+			userArrey[ 0 ] = animal_4;
+
+			console.log( userArrey );
+
+		}
+
+		function TestArrey () {
+
+			var ifArreyReady = false;
+	
+	
+			while ( ifArreyReady !== true ) {
+				if (( bullCowArrey[ 0 ] !== bullCowArrey[ 1 ] &&  bullCowArrey[ 0 ] !== bullCowArrey[ 2 ] && bullCowArrey[ 0 ] !== bullCowArrey[ 3 ] ) &&  ( bullCowArrey[ 1 ] !== bullCowArrey[ 0 ] &&  bullCowArrey[ 1 ] !== bullCowArrey	[ 2 ] && bullCowArrey[ 1 ] !== bullCowArrey[ 3 ] ) && ( bullCowArrey[ 2 ] !== bullCowArrey[ 0 ] &&  bullCowArrey[ 2 ] !== bullCowArrey[ 1 ] && bullCowArrey[ 2 ] !== bullCowArrey[ 3 ] ) && ( bullCowArrey[ 3 ] !== bullCowArrey[ 0 ] &&  bullCowArrey[ 3 ] !== bullCowArrey[ 1 ] && bullCowArrey[ 3 ] !== bullCowArrey[ 2 ] )) {
+					ifArreyReady = true;
+					console.log( "generate animals" );
+					console.log( bullCowArrey );
+				} else {
+					bullcow = getRandom( 1000, 9999 );
+					getBullCowArrey( bullcow );
+				}
+			}
+		}
+
+		function startGame () {
+
+			var current = null;
+			var bulls = 0;
+			var cows = 0;
+			i++;
+				
+				while ( true ) {
+
+				var answerbullcow = +userNumber.value;
+				if ( answerbullcow < 1000 || answerbullcow > 9999 || isNaN( answerbullcow ) === true ) {
+					alert( "Введите корректное число!" );
+					break
+				} else {
+					getUserArrey( answerbullcow );
+				}				
+	
+				if ( userArrey[ 0 ] === bullCowArrey[ 1 ] || userArrey[ 0 ] === bullCowArrey[ 2 ] || userArrey[ 0 ] === bullCowArrey[ 3 ] ) {
+					cows++;
+				}
+				if ( userArrey[ 1 ] === bullCowArrey[ 0 ] || userArrey[ 1 ] === bullCowArrey[ 2 ] || userArrey[ 1 ] === bullCowArrey[ 3 ] ) {
+					cows++;
+				}
+				if ( userArrey[ 2 ] === bullCowArrey[ 0 ] || userArrey[ 2 ] === bullCowArrey[ 1 ] || userArrey[ 2 ] === bullCowArrey[ 3 ] ) {
+					cows++;
+				}
+				if ( userArrey[ 3 ] === bullCowArrey[ 0 ] || userArrey[ 3 ] === bullCowArrey[ 1 ] || userArrey[ 3 ] === bullCowArrey[ 2 ] ) {
+					cows++;
+				}
+				if ( userArrey[ 0 ] === bullCowArrey[ 0 ] ) {
+					bulls++;
+				}
+				if ( userArrey[ 1 ] === bullCowArrey[ 1 ] ) {
+					bulls++;
+				}
+				if ( userArrey[ 2 ] === bullCowArrey[ 2 ] ) {
+					bulls++;
+				}if ( userArrey[ 3 ] === bullCowArrey[ 3 ] ) {
+					bulls++;
+				}
+
+
+				if ( answerbullcow > bullcow ) {
+					current = "Ваш зверь больше!";
+				} else if ( answerbullcow < bullcow ) {
+					current = "Ваш зверь меньше!";
+				}
+
+				result.style.display = "block";
+				result.innerHTML = "Коровы: " + cows + " " + " Быки: " + bulls + " " + current;
+
+				
+
+				if ( bulls === 4 ) {
+					cows = 0;
+					bulls = 0;
+					bullcow = getRandom( 1000, 9999 );
+					getBullCowArrey( bullcow );
+					TestArrey();
+					result.innerHTML = '';
+					result.style.display = "none";
+					alert( "Вы выиграли!" + '\n' + "Количество попыток: " + i );
+					i = 0;
+					break;
+				}
+
+				if ( i === 10 ) {
+					cows = 0;
+					bulls = 0;
+					bullcow = getRandom( 1000, 9999 );
+					getBullCowArrey( bullcow );
+					TestArrey();
+					result.innerHTML = '';
+					result.style.display = "none";
+					alert( "Вы проиграли!" + '\n' + "Попробуйте еще раз!: " + i );
+					i = 0;
+					break;
+				}
+
+				break;
+			}
+		}
+
+
+		TestArrey();
+	
+
+
+	</script>
+</body>
+</html>

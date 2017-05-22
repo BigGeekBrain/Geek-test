@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task Manager</title>
+	<style>
+		input {
+			width: 300px;
+			border-radius: 3px;
+			text-align: center;
+			vertical-align: center;
+			margin-left: 15px; 
+			padding: 10px;
+			margin: 20px 0px;
+		}
+		input:focus {
+			color: #001281;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			outline: none;
+			vertical-align: center;
+			text-align: left;
+		}
+		button {
+			background: #251D59;
+			color: #ffffff;
+			border: 2px solid #311C7F;
+			border-radius: 3px;
+			outline: none;
+			cursor: pointer;
+			padding: 10px;
+			vertical-align: middle;
+			margin: 20px;
+		}
+		button:hover {
+			background: #558ECF;
+			border: 2px solid #558ECF;
+		}
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px; 
+		}
+		#stat {
+			margin: 15px;
+			padding: 10px;
+			border: 2px solid #D87A00;
+			border-radius: 3px;
+			min-width: 300px;
+			max-width: 400px;
+			text-align: left;
+			min-height: 100px;
+			white-space: pre-wrap;
+			overflow-x: auto;
+			display: inline-block;
+		}
+		.status__item {
+			margin: 20px;
+			width: 100px;
+		}
+		.col > p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 20px 10px;
+			width: 500px;
+			white-space: pre-wrap;
+		}
+		.conteiner {
+			display: flex;
+		}
+		.col {
+		text-align: center;
+		width: 50%;
+		height: 300px;
+		}
+	</style>
+</head>
+<body>
+<h1>Задача: </h1>
+<p>8. Написать свой планировщик задач. 
+- На странице есть текстовое поле для ввода новой задачи. 
+- При нажатии на "Создать" - задача добавляется на страницу. 
+- При наведении на задачу появляется иконка для удаления задачи со страницы. 
+- Добавить в заголовок планировщика кнопку сортировки задач по названию (1 нажатие - по возрастанию, 2 нажатие - по убыванию, 3 нажатие - в порядке добавления ). 
+- Добавить дополнительный список "Важное". У каждой обычной задачи есть кнопка переноса задачи в этот список. При нажатии на неё, задача удаляется из обычного списка и добавляется в список "Важное". Задачу можно перенести обратно с помощью кнопки в списке "Важное". Задачи из списка "Важное" также можно удалить
+- Написать блок-схему.</p>
+<div class="conteiner">
+	<div class="col">
+		<input type="text" name="myString" id="myString" placeholder="Введите текст задачи">
+		<div><button type="button" id="send">Добавить задачу</button></div>
+	</div>
+	<div class="col">
+		<p><b>Предпросмотр:</b></p>
+		<div id="stat"></div>
+	</div>
+</div>
+	<script>
+
+	var string = document.getElementById( 'myString' );
+	var taskArrey = [];
+		
+	function addtask () {
+		var task = string.value;
+		taskArrey.push( task );
+		console.log( taskArrey );
+		pointerTaskArrey = taskArrey.map(function( element ){
+			return "&bull; " + element;
+		})
+		console.log( pointerTaskArrey );
+		var tasks = pointerTaskArrey.join( '\n' );
+		console.log( tasks );
+		stat.innerHTML = tasks;	
+
+
+	}
+		
+
+		
+		var sendBtn = document.getElementById( 'send' );
+
+		
+		sendBtn.addEventListener( 'click', function(){addtask()} );
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>phones</title>
+	<style>
+		p {
+			font-weight: normal;
+			font-size: 20px;
+			margin: 10px 10px 50px 10px;
+			width: 1000px;
+			white-space: pre-wrap;
+		}
+		h1 {
+			font-size: 20px;
+			margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Задача:</h1>
+	<p>6. Дан массив ['1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0']. Сделайте из него массив телефонов [ '16-25-34', '50-82-79']. Длина массива всегда кратна 6. Написать как минимум две (!) разные реализации программы (+ блок-схемы). Проверить производительность решений на jsperf.com и прислать ссылку на ваши тесты.</p>
+
+<a href="https://jsperf.com/phonenumbers" title="Test">Тест способов создания массива телефонов</a>
+	<script>
+		var arrey = ['1', '2', '3', '4', '5', '6', '5', '8', '7', '9', '1', '0'];
+		var phonesArrey = [];
+		var phones;
+		var numberArrey = arrey.map( function( number ) {
+			return +number;
+		});
+
+		
+
+		phonesArrey.push( numberArrey[ 0 ], numberArrey[ 5 ], "-", numberArrey[ 1 ], numberArrey[ 4 ], "-", numberArrey[ 2 ], numberArrey[ 3 ], "|", numberArrey[ 6 ], numberArrey[ 11 ], "-", numberArrey[ 7 ], numberArrey[ 1 ], "-", numberArrey[ 8 ], numberArrey[ 9 ] );
+
+
+
+		phones = phonesArrey.join("").split("|");
+
+
+		console.log( phones );
+		
+	</script>
+</body>
+</html>
