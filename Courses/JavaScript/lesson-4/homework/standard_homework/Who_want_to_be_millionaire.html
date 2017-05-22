@@ -36,7 +36,6 @@
 			padding: 0px;
 		}
 		html {
-			font-size: 0px;
 			height: 100%;
 		}
 		body {
@@ -66,39 +65,143 @@
     		border: 5px solid #0C144C;
     		border-radius: 5px;
     	}
-    	.answers {
-    		margin: 10px;
-    		height: 300px;
-    		margin-top: 5px;
-    		font-size: 20px;
-    		color: #ffffff;
-    		background: #2B3578;
-    		padding: 20px;
-    		border: 5px solid #0C144C;
-    		border-radius: 5px;
-    		list-style-type: none;
+    	.answers__row {
     		display: flex;
     	}
     	.answers__item {
-			width: 200px;
-			display: inline-block;
+            color: black;
+            width: 50%;
+            height: 30px;
+            margin: 10px;
+            font-size: 20px;
+            padding: 10px;
+            border: 5px solid #D86203;
+            border-radius: 5px;
     	}
+        .answers__item:hover {
+            color: #ffffff;
+            background: #F57C11;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
 	<div class="back">
 		<div class="conteiner">
-				<h1 class="qwestion">Сколько отверстий в розетке?</h1>
-			<ul class="answers">
-				<li class="answers__item">два</li>
-				<li class="answers__item">пять</li>
-				<li class="answers__item">шесть</li>
-				<li class="answers__item">восемь</li>
-			</ul>
+				<h1 class="qwestion" id="quest">Сколько отверстий в розетке?</h1>
+			<div class="answers__row">
+				<div class="answers__item" id="answerA"></div>
+				<div class="answers__item" id="answerB"></div>
+            </div>
+            <div class="answers__row">
+				<div class="answers__item" id="answerC"></div>
+				<div class="answers__item" id="answerD"></div>
+			</div>
 		</div>
 	</div>
 	<script>
-		
+
+    var question = document.getElementById( "quest" );
+    var a = document.getElementById( "answerA" );
+    var b = document.getElementById( "answerB" );
+    var c = document.getElementById( "answerC" );
+    var d = document.getElementById( "answerD" );
+    var questionArrey = [ "Сколько отверстий в розетке?", "Сколько в доме мух?", "Сколько живут дятлы?" ];
+    var correctArrey = [ "два", "пять", "шесть", "восемь", "артем", "миша", "лена", "даша" ];
+    var correctAnswerCount = 0;
+    var currentQuestion = questionArrey[ 0 ];
+    var currentAnswer = correctArrey[ 0 ];
+
+    answerA.innerHTML = correctArrey [ 0 ];
+    answerB.innerHTML = correctArrey [ 1 ];
+    answerC.innerHTML = correctArrey [ 2 ];
+    answerD.innerHTML = correctArrey [ 3 ];
+
+    var check = function ( string ) {
+
+        if ( string === currentAnswer ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+		var answerBtn_1 = document.getElementById( "answerA" );
+        var answerBtn_2 = document.getElementById( "answerB" );
+        var answerBtn_3 = document.getElementById( "answerC" );
+        var answerBtn_4 = document.getElementById( "answerD" );
+
+        answerBtn_1.addEventListener( 'click', function(){
+            check( a.textContent );
+            if ( check( a.textContent ) === true ) {
+                correctAnswerCount++;
+                question.innerHTML = questionArrey[ questionArrey.indexOf( currentQuestion
+                 ) + 1 ];
+                currentQuestion = questionArrey[ 0 + correctAnswerCount ];
+                currentAnswer = correctArrey[ 0 + correctAnswerCount ];
+                a.style.background = '#84CB6B';
+                a.style.borderColor = 'green';
+                a.style.color = '#ffffff';
+
+            } else {
+                a.style.background = '#E37070';
+                a.style.borderColor = '#AC362A';
+                a.style.color = '#ffffff';  
+            }
+        });
+        answerBtn_2.addEventListener( 'click', function(){
+            check( b.textContent );
+            if ( check( b.textContent ) === true ) {
+                correctAnswerCount++;
+                question.innerHTML = questionArrey[ questionArrey.indexOf( currentQuestion
+                 ) + 1 ];
+                currentQuestion = questionArrey[ 0 + correctAnswerCount ];
+                currentAnswer = correctArrey[ 0 + correctAnswerCount ];
+                b.style.background = '#84CB6B';
+                b.style.borderColor = 'green';
+                b.style.color = '#ffffff';
+            } else {
+                b.style.background = '#E37070';
+                b.style.borderColor = '#AC362A';
+                b.style.color = '#ffffff';  
+            }
+
+        });
+        answerBtn_3.addEventListener( 'click', function(){
+            check( c.textContent );
+            if ( check( c.textContent ) === true ) {
+                correctAnswerCount++;
+                question.innerHTML = questionArrey[ questionArrey.indexOf( currentQuestion
+                 ) + 1 ];
+                currentQuestion = questionArrey[ 0 + correctAnswerCount ];
+                currentAnswer = correctArrey[ 0 + correctAnswerCount ];
+                c.style.background = '#84CB6B';
+                c.style.borderColor = 'green';
+                c.style.color = '#ffffff';
+            } else {
+                c.style.background = '#E37070';
+                c.style.borderColor = '#AC362A';
+                c.style.color = '#ffffff';  
+            }
+        });
+        answerBtn_4.addEventListener( 'click', function(){
+            check( d.textContent );
+            if ( check( d.textContent ) === true ) {
+                correctAnswerCount++;
+                question.innerHTML = questionArrey[ questionArrey.indexOf( currentQuestion
+                 ) + 1 ];
+                currentQuestion = questionArrey[ 0 + correctAnswerCount ];
+                currentAnswer = correctArrey[ 0 + correctAnswerCount ];
+                d.style.background = '#84CB6B';
+                d.style.borderColor = 'green';
+                d.style.color = '#ffffff';
+            } else {
+                d.style.background = '#E37070';
+                d.style.borderColor = '#AC362A';
+                d.style.color = '#ffffff';  
+            }
+        });
 	</script>
 </body>
 </html>

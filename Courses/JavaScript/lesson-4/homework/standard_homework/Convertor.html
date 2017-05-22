@@ -51,6 +51,7 @@
 			width: 220px;
 			text-align: center;
 			min-height: 20px;
+			display: none;
 		}
 	</style>
 </head>
@@ -83,8 +84,9 @@
 				console.log( "Вы ввели число больше 999" );
 				numberObject = {};
 				console.log( numberObject );
-				result.innerHTML = "сотни: " + numberObject.handred + " десятки: " + numberObject.decade + " единицы: " + numberObject.unit;
+				result.innerHTML = "Вы ввели число больше 999";
 			}
+			result.style.display = "block";
 		}
 
 

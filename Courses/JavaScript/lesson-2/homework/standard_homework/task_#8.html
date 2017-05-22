@@ -10,17 +10,33 @@
 
 	<script>
 
-	function power ( val, pow ){
-		var current = val * val;
-		var res = current;
-		if ( pow > 0 ) {
-			result += power( val, pow - 1 );
-			return result;
-		}
-	}
+/* --------- первый вариант -----------
 
-alert(power(2, 3));
+	function power ( val, pow ){
+
+ 		var result = val;
+
+ 		if ( pow > 1 ) {
+ 			result = result * power( result, pow - 1 );
+ 		}
+ 		return result;
+ 	}
+ */
+
+// alert(power(5, 4));
+
+function power( val, pow ) {
+  	if ( pow > 1 ) {
+   		return power( val, pow - 1 ) * val;
+ 	}
+ 	else if ( pow < 2 ) {
+   		return val;
+  	}
+}
+
+console.log( power( 11, 2 ) );
 
 	</script>
+	
 </body>
 </html>
